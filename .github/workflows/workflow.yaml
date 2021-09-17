@@ -17,3 +17,9 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: pr step
+        uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+          issue_message: 'Message will be displayed on users first issue'
+          pr_message: 'Message will be displayed on users first pr'  
